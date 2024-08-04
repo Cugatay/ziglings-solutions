@@ -10,7 +10,7 @@
 // Please take a moment to put on the wizard hat which has been
 // provided for you. We're about to use this ability to implement
 // a generic function.
-//
+
 const print = @import("std").debug.print;
 
 pub fn main() void {
@@ -42,8 +42,8 @@ pub fn main() void {
 //     2) Sets the size of the array of type T (which is the
 //        sequence we're creating and returning).
 //
-fn makeSequence(comptime T: type, ??? size: usize) [???]T {
-    var sequence: [???]T = undefined;
+fn makeSequence(comptime T: type, comptime size: usize) [size]T {
+    var sequence: [size]T = undefined;
     var i: usize = 0;
 
     while (i < size) : (i += 1) {

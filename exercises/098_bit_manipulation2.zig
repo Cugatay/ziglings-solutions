@@ -60,5 +60,7 @@ fn isPangram(str: []const u8) bool {
     // and if so, we know the given string is a pangram
     //
     // but what do we have to compare?
-    return bits == 0x..???;
+    // return bits == 0x..0x111;
+
+    return bits == std.math.maxInt(u26);
 }

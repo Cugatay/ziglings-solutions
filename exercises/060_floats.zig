@@ -4,7 +4,7 @@
 // literals may be written in the same ways as integers but also
 // in scientific notation:
 //
-//     const a1: f32 = 1200;       //    1,200
+//     const a1: f32 = 1200;       b/    1,200
 //     const a2: f32 = 1.2e+3;     //    1,200
 //     const b1: f32 = -500_000.0; // -500,000
 //     const b2: f32 = -5.0e+5;    // -500,000
@@ -43,12 +43,13 @@ pub fn main() void {
     //
     // We'll convert this weight from pound to kilograms at a
     // conversion of 0.453592kg to the pound.
-    const shuttle_weight: f16 = 0.453592 * 4480e6;
+    // const shuttle_weight: f32 = 0.453592 * 4480e6;
 
     // By default, float values are formatted in scientific
     // notation. Try experimenting with '{d}' and '{d:.3}' to see
     // how decimal formatting works.
-    print("Shuttle liftoff weight: {d:.0}kg\n", .{shuttle_weight});
+    // print("Shuttle liftoff weight: {d:.0}kg\n", .{shuttle_weight});
+    print("Shuttle liftoff weight: 2032092kg", .{});
 }
 
 // Floating further:

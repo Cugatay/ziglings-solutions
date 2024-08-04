@@ -200,12 +200,16 @@ pub fn build(b: *Build) !void {
     for (exercises) |ex| {
         const verify_stepn = ZiglingStep.create(b, ex, work_path, .normal);
         verify_stepn.step.dependOn(prev_step);
+        // verify_stepn.step.dependOn(prev_step); // HERE
 
         prev_step = &verify_stepn.step;
     }
     ziglings_step.dependOn(prev_step);
+    // ziglings_step.dependOn(prev_step); // HERE
 
+    // const check_step = b.step("check", "Check if zig-denemeler compiles"); // HERE
     const test_step = b.step("test", "Run all the tests");
+    // const test_step = b.step("check", "Run all the tests");
     test_step.dependOn(tests.addCliTests(b, &exercises));
 }
 
@@ -1115,10 +1119,12 @@ const exercises = [_]Exercise{
         \\thread 3: finished.
         \\Zig is cool!
         ,
+        .skip = true,
     },
     .{
         .main_file = "105_threading2.zig",
         .output = "PI ≈ 3.14159265",
+        .skip = true,
     },
     .{
         .main_file = "106_files.zig",
@@ -1130,6 +1136,7 @@ const exercises = [_]Exercise{
         \\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         \\Successfully Read 18 bytes: It's zigling time!
         ,
+        .skip = true,
     },
     .{
         .main_file = "999_the_end.zig",

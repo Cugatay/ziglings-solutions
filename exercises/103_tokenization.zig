@@ -128,7 +128,6 @@ const std = @import("std");
 const print = std.debug.print;
 
 pub fn main() !void {
-
     // our input
     const poem =
         \\My name is Ozymandias, King of Kings;
@@ -136,7 +135,7 @@ pub fn main() !void {
     ;
 
     // now the tokenizer, but what do we need here?
-    var it = std.mem.tokenizeAny(u8, poem, ???);
+    var it = std.mem.tokenizeAny(u8, poem, " ,;!\n");
 
     // print all words and count them
     var cnt: usize = 0;
